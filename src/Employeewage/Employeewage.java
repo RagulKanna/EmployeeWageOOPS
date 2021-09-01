@@ -1,5 +1,7 @@
 package Employeewage;
 
+import java.util.Scanner;
+
 public class Employeewage
 {
     public static int check=(int)(Math.random()*2);
@@ -47,10 +49,25 @@ public class Employeewage
 
     public static void main(String[] args)
     {
+        Scanner sc= new Scanner(System.in);
     System.out.println("\n        Welcome to Employee Wage Computation Program");
 
     Employeewage emp=new Employeewage();
-    emp.fulltimeemployeePresentorAbesnt();
-    emp.parttimeemployeewage();
+
+    System.out.println("\nenter the employee to check attendance and wage:");
+    System.out.println("\n  Enter\n  1 for FullTime Employee\n  2 for PartTime Employee");
+    int choice=sc.nextInt();
+        switch (choice)
+        {
+        case 1:
+        {
+            emp.fulltimeemployeePresentorAbesnt();
+        }
+        break;
+        case 2:
+        {
+            emp.parttimeemployeewage();
+        }break;
+        }
     }
 }
