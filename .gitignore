@@ -32,5 +32,6 @@ build/
 .idea/
 Emp_wage_OOPS.iml/
 .gitignore/
+out/
 
 
