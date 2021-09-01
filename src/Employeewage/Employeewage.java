@@ -6,24 +6,28 @@ public class Employeewage
 {
     public static int check=(int)(Math.random()*2);
     int checkfullhours = (int) (Math.floor(Math.random() * 8 % 9) + 1);
+    int checkfullmonth =(int) (Math.floor(Math.random() * 100 % 101) + 1);
     int checkparthours = (int) (Math.floor(Math.random() * 4 % 5) + 1);
+    int checkpartmonth =(int) (Math.floor(Math.random() * 50 % 51) + 1);
     public static int WAGE_PER_HOUR = 20,FULL_DAY_HOUR = 8,PART_TIME_HOUR=4,FULL_MONTH_HOUR=100,PART_MONTH_HOUR=50;
 
 
-    public void fulltimeemployeePresentorAbesnt()
+    public void fulltimeemployee()
     {
         System.out.println("\n\ncheck the fulltime employee present or absent:");
         employeePresentorAbesnt();
         employeewage(FULL_DAY_HOUR,checkfullhours);
         monthlywage(FULL_MONTH_HOUR,WAGE_PER_HOUR);
+        conditionmontlywage(WAGE_PER_HOUR,checkfullmonth);
     }
 
-    public void parttimeemployeewage()
+    public void parttimeemployee()
     {
         System.out.println("\n\ncheck the parttime employee present or absent:");
         employeePresentorAbesnt();
         employeewage(PART_TIME_HOUR,checkparthours);
         monthlywage(PART_MONTH_HOUR,WAGE_PER_HOUR);
+        conditionmontlywage(WAGE_PER_HOUR,checkpartmonth);
 
     }
 
@@ -55,6 +59,13 @@ public class Employeewage
     System.out.println("\n  Employee's monthly salary is "+monthlysalary);
     }
 
+    public void conditionmontlywage(int wage,int hours)
+    {
+        System.out.println("\n\ncheck the monthly wage with presence of hours:");
+        int monthlywage=wage*hours;
+        System.out.println("\n  The monthly wage of employee is "+monthlywage+", employee worked for "+hours);
+    }
+
     public static void main(String[] args)
     {
         Scanner sc= new Scanner(System.in);
@@ -70,12 +81,12 @@ public class Employeewage
         {
         case 1:
         {
-            emp.fulltimeemployeePresentorAbesnt();
+            emp.fulltimeemployee();
         }
         break;
         case 2:
         {
-            emp.parttimeemployeewage();
+            emp.parttimeemployee();
         }break;
         }
     }
